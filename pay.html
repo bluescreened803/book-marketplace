@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay | My Bookshop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header">
+        <img alt="logo, solid black closed book" id="header-image" src="image/navbar-icon.png">
+        <h1 id="header-text"> My Bookshop </h1>
+    </div>
+
+    <div id="navbar">
+        <p class="clickable desktop home-link">Home</p>
+        <p class="clickable desktop">About us</p>
+        <p class="clickable desktop">Contact us</p>
+        <p id="drop-button-mobile">v Tap to view navbar</p>
+    </div>
+    <div id="dropdown-container">
+        <p class="dropdown-item home-link">Home</p>
+        <p class="dropdown-item">About us</p>
+        <p class="dropdown-item">Contact us</p>
+    </div>
+
+    <h2 id="pay-title">Payment Options</h2>
+    <p id="pay-help-text">Please enter your payment information <strong>correctly</strong> to complete your purchase. You can find your 3-4 digit security code on the back of your card. Once you have finished, press the <strong>continue</strong> button. <br> NOTE: API has been redacted, so this page no longer functions.</p>
+    <p id="pay-help-"></p>
+    <div id="payment-form-container">
+        <form id="payment-form">
+            <div class="payment-form-collection">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="5100000000000000">
+            </div>
+
+            <p id="card-number-error" class="error-text"></p>
+    
+            <div class="payment-form-collection">
+                <label for="expiry-date">Expiry Date</label>
+                <div id="expiry-date">
+                    <select id="expiry-month">
+                        <option value="-1" hidden>Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select> 
+                    <select id="expiry-year">
+                        <option value="-1" hidden>Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
+                    </select> 
+                </div>
+            </div>
+
+            <p id="expiry-date-error" class="error-text"></p>
+
+            <div class="payment-form-collection">
+                <label for="cvv-code">Security Code</label>
+                <input type="text" id="cvv-code" placeholder="000">
+            </div>
+  
+            <p id="cvv-code-error" class="error-text"></p>
+
+            <p id="server-error" class="error-text"></p>
+            
+            <div id="submit-collection">
+                <input title="Complete your purchase" id="submit-button" type="submit" value="Continue">
+            </div>
+        </form>
+    </div>
+<script src="js/payScript.js"></script>
+<script src="js/navScript.js"></script>
+</body>
+</html>

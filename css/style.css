@@ -1,0 +1,263 @@
+/* Browser reset */
+html, body, div, h1, h2, h3, h4, h5, h6, p, em, strong, img, ol, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+}
+
+button, input[type=submit] {
+    background-color: #0067b8;
+    color: white;
+    border: 0px;
+    font-weight: 600;
+    padding: 10px 12px 10px 12px;
+}
+
+button:hover, input[type=submit]:hover  {
+    background-color: #004a7f;
+}
+
+button:active, input[type=submit]:active {
+    transform: scale(0.95); /* Provide the user with visual feedback when pressing a button */
+}
+
+button:focus, input[type=submit]:focus {
+    outline: 2px white dashed;
+    outline-offset: -5px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none; /* User should not be able to highlight or copy header text */
+    background-color: white;
+}
+
+#header #header-text {
+    margin: 10px 10px 10px 20px;
+    padding-bottom: 5px;
+}
+
+#header #header-image {
+    height: 35px;
+}
+
+#navbar {
+    background-color: #0067b8;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#navbar p {
+    border: solid 2px #0067b8;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    user-select: none; /* User should not be able to highlight or copy navbar items */
+}
+
+/* Only apply to navbar items that are supposed to be clicked by the user */
+#navbar .clickable:active {
+    text-decoration: none;
+    border: dashed 2px;
+    filter: brightness(90%);
+}
+
+#navbar .clickable:hover {
+    text-decoration: underline;
+}
+
+#drop-button-mobile {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+#dropdown-container {
+    user-select: none;
+    display: none;
+}
+
+.dropdown-item {
+    background-color: #0067b8;
+    border: solid 2px #0067b8;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown-item:hover, #drop-button-mobile:hover {
+    background-color: #004a7f;
+} 
+
+.dropdown-item:active, #drop-button-mobile:active {
+    border: dashed 2px white;
+    filter: brightness(90%);
+} 
+
+#books-container {
+    margin: 30px 10px 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book {
+    background-color: white;
+    /* Highlight books using box shadows, make them grey using alpha channel */
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 2px 4px, rgba(0, 0, 0, 0.10) 0px 0px 1px;
+    margin: 0px 10px 30px 10px;
+    display: flex; 
+    flex: 40%; /* Size each book to create 2 column desktop view */
+    height: 450px;
+}
+
+.book:hover {
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 4px 6px, rgba(0, 0, 0, 0.10) 0px 0px 4px;
+}
+
+.book .book-panel {
+    flex: 1; /* Each book has 2 panels that occupy 50% of the available space */
+    height: 450px;
+    display: flex;
+    flex-direction: column; /* Book panels are organised vertically */
+}
+
+.book .book-title {
+    margin: 30px 15px 15px 0px;
+}
+
+.book .book-pay-button {
+    margin-top: auto; /* Automatically place the pay button at the bottom of container */
+    margin-bottom: 30px;
+    margin-right: 15px;
+    width: 200px;
+    align-self: center;
+}
+
+.book .book-blurb {
+    margin-right: 15px;
+}
+
+.book .book-cover {
+    align-self: center;
+    margin: auto;
+    height: auto; /* Ensure image retains its aspect ratio while still fitting inside the book panel */
+    width: 60%;
+}
+
+/* All media queries*/ 
+@media only screen and (max-width: 750px) {
+    /* Adjust columns for a smaller window */
+    .book {
+        flex: 100%; 
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    /* Adjust navigation bar for mobile devices */
+    .desktop {
+        display: none; 
+    }
+
+    #drop-button-mobile {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    /* For extra small displays */
+    #header-text {
+        font-size: 24px;
+    }
+
+    .book {
+        margin: 0px 0px 30px 0px;
+    }
+}
+
+/* CSS for pay page */
+#pay-title {
+    margin: 30px 0px 0px 15px;
+}
+
+#pay-help-text {
+    margin: 10px 0px 30px 15px;
+}
+
+#payment-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+#payment-form {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 2px 4px, rgba(0, 0, 0, 0.10) 0px 0px ;
+    padding: 20px;
+    width: 350px;
+}
+
+#payment-form .error-text {
+    /* Add margin to error messages */
+    margin-bottom: 25px;
+}
+
+.payment-form-collection {
+    /* Each label and input is inside a flex container */
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.payment-form-collection input, .payment-form-collection #expiry-date{
+    margin-left: auto; /* Automatically move all input boxes to the end of container */
+}
+
+.payment-form-collection select {
+    /* Manual width for select boxes so they are inline with other inputs */
+    width: 86px;
+}
+
+.payment-form-collection input, .payment-form-collection select {
+    border: 2px solid black;
+    background-color: white;
+    padding: 4px 8px 4px 8px;
+}
+
+.payment-form-collection input:focus, .payment-form-collection select:focus {
+    border: 2px solid #0067b8;
+    outline: none;
+}
+
+#submit-collection {
+    /* Special container for the submit button */
+    display: flex;
+    justify-content: center;
+}
+
+#submit-collection #submit-button {
+    width: 120px;
+}
+
+/* CSS for success page */
+.error-text {
+    color: red;
+}
+
+#feedback-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Place container in the center by subtracting height of standard navigation bar */
+    height: calc(100vh - 117.4px); 
+}
+
+#feedback-container #feedback-message {
+    text-align: center;
+}
