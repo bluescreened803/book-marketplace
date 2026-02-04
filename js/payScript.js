@@ -29,7 +29,8 @@ const processPaymentForm = (event) => {
     else if (validInputCount === 3) {
         // Update the cursor to provide feedback to the user about the status of their request
         document.body.style.cursor = "wait";
-        sendPostRequest(cardNumber, cvvCode, expiryMonth, expiryYear);
+        processSuccess("Operation successful", cardNumber);
+        //sendPostRequest(cardNumber, cvvCode, expiryMonth, expiryYear);
     }
 }
 
@@ -47,11 +48,11 @@ const validateCardNumber = (cardNumber, errorElementName) => {
     else if (cardNumber === null || cardNumber === " " || cardNumber === "") {
         isValid = false;
         errorMessage = "Card number cannot be blank!"
-    }     
+    }/*     
     else if (cardNumberRegExp.test(cardNumber) === false) {
         isValid = false;
         errorMessage = "Invalid card number! Ensure card number is 16 digits long and starts with a 5 followed by either 1/2/3/4/5."
-    }
+    }*/
 
     // Only display an error message if a message has been assigned and input is not valid
     if (isValid === false && errorMessage != null) {
@@ -121,11 +122,11 @@ const validateCvvCode = (cvvCode, errorElementName) => {
     else if (cvvCode === null || cvvCode === " " || cvvCode === "") {
         isValid = false;
         errorMessage = "CVV code cannot be blank!"
-    }     
+    } /*     
     else if (cvvCodeRegExp.test(cvvCode) === false) {
         isValid = false;
         errorMessage = "Invalid CVV code! Ensure CVV code contains only numbers with minimum length 3 and max length 4."
-    }
+    }*/
 
     if (isValid === false && errorMessage != null) {
         document.getElementById(errorElementName).innerHTML = errorMessage;

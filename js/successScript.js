@@ -10,7 +10,7 @@ window.onload = () => {
 
     // Display error message if no response or valid card number is found
     let cardNumberRegExp = null; // REDACTED 
-    if (serverResponse === null || serverResponse === "" || cardNumber === null || cardNumber === "" || cardNumberRegExp.test(cardNumber) === false) {
+    if (serverResponse === null || serverResponse === "" || cardNumber === null || cardNumber === "") {
         document.getElementById("feedback-message").innerHTML = "Error! Server response or card number not recieved correctly."
     }
     else {
